@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+.btn {
+  border-radius: 15px;
+  background-color: #ff5151;
+  transition: 0.1s;
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #fc2f2f;
+}
+
+body {
+  background-color: #ebf8ff;
+  overflow: hidden;
+  height: 100vh;
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  body {
+    overflow: auto;
+  }
+}
+
+a {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+
+#root {
+  max-width: 2000px;
+  display: grid;
+  margin: 0 auto;
+  font-family: "Nunito", sans-serif;
+  max-height: 1200px;
+  padding: 15px;
+  height: inherit;
+  grid-template-rows: 106px;
+  grid-template-columns: 350px;
+  grid-template-areas: "header header" "aside content";
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  #root {
+    grid-template-columns: 0 1fr;
+    grid-template-rows: 66px;
+    padding: 5px 15px;
+  }
+}
+
+.add-recipe_mobile,
+.search-recipe_mobile {
+  display: none;
+  text-align: center;
+  padding: 10px;
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .add-recipe_mobile,
+  .search-recipe_mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 10px;
+  }
+}
+
+.form {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.form h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 600;
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .form h2 {
+    margin-bottom: 35px;
+  }
+}
+.form input[type*="text"] {
+  width: 90%;
+  font-size: 32px;
+  padding: 5px;
+}
+.form input[type*="file"] {
+  opacity: 0;
+  scale: 0;
+  position: absolute;
+}
+.form input[type*="submit"] {
+  color: #fff;
+  font-size: 36px;
+  padding: 17px 25px 13px 25px;
+}
+.form .btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+.form .btns .add-img__field {
+  display: inline-flex;
+  position: relative;
+  transform: translateX(250px);
+  box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 36px;
+  color: #fff;
+  border-radius: 0 15px 15px 0;
+  background-color: #ff5151;
+  transition: 0.1s;
+  max-width: 356px;
+  margin-bottom: 66px;
+}
+.form .btns .add-img__field p {
+  display: inline-block;
+}
+.form .btns .add-img__field img {
+  max-height: 62px;
+  margin-right: 23px;
+}
+.form .btns .add-img__field:hover {
+  background-color: #fc2f2f;
+}
+.form .btns .add-img__field::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 550px;
+  left: -550px;
+  border-radius: 15px 0 0 15px;
+  background-color: #fff;
+  height: 100%;
+  box-shadow: inherit;
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .form .btns .add-img__field::after {
+    display: none;
+  }
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .form .btns .add-img__field {
+    transform: none;
+  }
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .form .btns {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .form .btns .add-img__field {
+    margin: 0;
+  }
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .form input {
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+  .form input:last-child {
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .form .btns {
+    flex-direction: column;
+  }
+  .form .btns .add-img__field {
+    margin-bottom: 50px;
+    font-size: 25px;
+  }
+  .form .btns input[type*="submit"] {
+    font-size: 25px;
+  }
+}
+@media (max-width: 450px) {
+  .form .btns .add-img__field {
+    font-size: 20px;
+  }
+  .form .btns .add-img__field img {
+    max-width: 45px;
+  }
+  .form .btns input[type*="submit"] {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,103 @@
+.content {
+  grid-area: content;
+  padding: 60px 30px;
+}
+
+.content .recipeCard {
+  overflow: hidden;
+  position: relative;
+  min-width: 80%;
+  min-height: 80%;
+  border-radius: 15px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: transparent;
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.25);
+  transition: 0.1s;
+}
+.content .recipeCardWrapper {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  min-height: 100%;
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .content .recipeCardWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+.content .recipeCard:hover {
+  background-color: #b6e3fc;
+}
+.content .recipeCard .recipeSave {
+  position: relative;
+  z-index: 5;
+  width: 50px;
+  height: 50px;
+}
+.content .recipeCard .recipeSave svg {
+  position: absolute;
+  max-width: 90%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.content .recipeCard .recipeSave.active path {
+  fill: #ff5151;
+  stroke: #ff5151;
+}
+.content .recipeCard .recipe__title {
+  text-align: center;
+  font-size: 32px;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 0 0 15px 15px;
+}
+.content .recipeCard .recipeForward {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+.content .recipeCard .recipeImg {
+  pointer-events: none;
+  max-width: 20%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 1350px), (max-height: 870px) {
+  .content .recipeCard {
+    margin-bottom: 25px;
+    min-height: 600px;
+  }
+}
+@media (max-width: 1000px) {
+  .content .recipeCard {
+    min-height: 400px;
+  }
+}
+@media (max-width: 696px) {
+  .content .recipeCard {
+    min-height: 300px;
+  }
+}
+@media (max-width: 696px) {
+  .content .recipeCard {
+    min-height: 200px;
+  }
+  .content .recipeCard .recipe__title {
+    font-size: 25px;
+  }
+}
