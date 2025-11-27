@@ -1,28 +1,25 @@
 import React, { useState } from "react";
 import headerStyles from "./header.module.css";
 import asideStyles from "./aside.module.css";
+import { Link } from "react-router-dom";
 
 function Layout() {
   const [active, setActive] = useState(false);
   return (
     <>
       <header className={headerStyles.header}>
-        <a data-item="link" className={headerStyles.headerLogo} href="/">
-          <img src="./src/assets/logo.svg" alt="Логотип" />
-        </a>
+        <Link to="/" className={headerStyles.headerLogo}>
+          <img src="/src/assets/logo.svg" alt="Логотип" />
+        </Link>
         <div className={headerStyles.searchbar}>
           <input type="text" placeholder="Найти рецпет..." />
           <button className={headerStyles.searchBtn}>
-            <img src="./src/assets/icons/search-icon.svg" alt="Искать" />
+            <img src="/src/assets/icons/search-icon.svg" alt="Искать" />
           </button>
         </div>
-        <a
-          data-item="link"
-          href="/add"
-          className={`${headerStyles.addRecipe} btn`}
-        >
-          <img src="./src/assets/icons/plus.svg" alt="Добавить рецпет" />
-        </a>
+        <Link to={"/add"} className={`${headerStyles.addRecipe} btn`}>
+          <img src="/src/assets/icons/plus.svg" alt="Добавить рецпет" />
+        </Link>
         <div
           className={headerStyles.menuIcon}
           onClick={() => {
@@ -60,64 +57,57 @@ function Layout() {
           <ul className={asideStyles.sidebarBody}>
             <h2 className={asideStyles.sidebar__title}>Категории</h2>
             <li className={asideStyles.sidebar__item}>
-              <a
-                data-item="link"
-                href="/soups"
+              <Link
+                to="/soups"
                 className={`${asideStyles.sidebar__link} link_close`}
               >
                 Супы
-              </a>
+              </Link>
             </li>
             <li className={asideStyles.sidebar__item}>
-              <a
-                data-item="link"
-                href="/salads"
+              <Link
+                to="/salads"
                 className={`${asideStyles.sidebar__link} link_close`}
               >
                 Салаты
-              </a>
+              </Link>
             </li>
             <li className={asideStyles.sidebar__item}>
-              <a
-                data-item="link"
-                href="/main-course"
+              <Link
+                to="/main-course"
                 className={`${asideStyles.sidebar__link} link_close`}
               >
                 Вторые блюда
-              </a>
+              </Link>
             </li>
             <li className={asideStyles.sidebar__item}>
-              <a
-                data-item="link"
-                href="/drinks"
+              <Link
+                to="/drinks"
                 className={`${asideStyles.sidebar__link} link_close`}
               >
                 Напитки
-              </a>
+              </Link>
             </li>
           </ul>
           <div className={asideStyles.links}>
-            <a
-              data-item="link"
-              href="/my-recipes"
+            <Link
+              to="/my-recipes"
               className={`btn ${asideStyles.myRecipes} link_close`}
             >
               Мои рецпеты
-            </a>
-            <a
-              data-item="link"
-              href="/add"
+            </Link>
+            <Link
+              to="/add"
               className={`btn ${asideStyles.myRecipes} add-recipe_mobile link_close`}
             >
               Добавить рецпет
-            </a>
-            <a
-              data-item="link"
-              href="/my-recipes"
+            </Link>
+            <Link
+              to="/recipe-search"
               className={`btn ${asideStyles.myRecipes} add-recipe_mobile link_close`}
             >
               Поиск рецепта
-            </a>
+            </Link>
           </div>
         </div>
       </aside>

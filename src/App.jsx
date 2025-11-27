@@ -1,12 +1,10 @@
 import React from "react";
 import "./app.css";
-import Layout from "./components/Layout/Layout";
-import Content from "./components/Content/Content";
+import Router from "./components/Router";
 function App() {
   return (
     <>
-      <Layout />
-      <Content />
+      <Router />
     </>
   );
 }
